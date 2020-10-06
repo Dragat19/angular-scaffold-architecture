@@ -1,0 +1,80 @@
+
+.container {
+  height: 785px;// mejorar el container
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(at 50% 100%, rgba(123, 22, 255, 0.75), rgb(15, 1, 94));
+
+
+  //container del slider
+  &-slider {
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+
+    a {
+      display: inline-flex;
+      cursor: pointer;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right:5px;
+      margin-top: 5px;
+      padding: 5px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: tomato;
+
+      &:active{
+        border: 1px solid;
+      }
+    }
+  }
+
+  .active {
+    background: blue;
+  }
+
+  &-slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    &-item {
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      width: 300px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      font-size: 100px;
+      background: tomato;
+      margin-right: 10px;
+      color:#eee;
+    }
+
+    &::-webkit-scrollbar{
+      width: 10px;
+      height: 10px;
+      margin-top: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb{
+      background: transparent;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track{
+      background: transparent;
+    }
+  }
+}
+
+
+
